@@ -1,0 +1,7 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "lightning_forge:items/ancient_pickaxe",
+    "layer1": "lightning_forge:items/ancient_pickaxe_cd"
+  }
+}

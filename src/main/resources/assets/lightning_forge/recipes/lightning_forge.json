@@ -1,0 +1,50 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DAD",
+    "FSF",
+    "RER"  ],
+  "key": {
+    "D": [
+      {
+        "item": "minecraft:diamond",
+        "data": 0
+      }
+    ],
+    "A": [
+      {
+        "item": "minecraft:anvil",
+        "data": 0
+      }
+    ],
+    "F": [
+      {
+        "item": "minecraft:furnace",
+        "data": 0
+      }
+    ],
+    "S": [
+      {
+        "item": "minecraft:nether_star",
+        "data": 0
+      }
+    ],
+    "R": [
+      {
+        "item": "minecraft:redstone_block",
+        "data": 0
+      }
+    ],
+    "E": [
+      {
+        "item": "minecraft:enchanting_table",
+        "data": 0
+      }
+    ]
+
+  },
+  "result": {
+    "item": "lightning_forge:lightning_forge",
+    "data": 0
+  }
+}

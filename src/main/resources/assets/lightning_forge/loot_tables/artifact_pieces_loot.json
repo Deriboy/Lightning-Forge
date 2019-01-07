@@ -1,0 +1,26 @@
+{
+  "pools": [{
+    "name": "artifact_pieces",
+    "rolls": 10,
+    "entries": [
+      {
+        "type": "item",
+        "name": "lightning_forge:artifact_piece",
+        "weight": 99,
+        "functions": [
+          {
+            "function": "minecraft:set_data",
+            "data": {
+              "min": 0,
+              "max": 1
+            }
+          }
+        ]
+      },
+      {
+        "type": "empty",
+        "weight": 1
+      }
+    ]
+  }]
+}

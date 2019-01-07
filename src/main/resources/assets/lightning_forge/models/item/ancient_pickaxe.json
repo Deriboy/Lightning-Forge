@@ -1,0 +1,14 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "lightning_forge:items/ancient_pickaxe"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "lightning_forge:cooldown": 1
+      },
+      "model": "lightning_forge:item/ancient_pickaxe_cd"
+    }
+  ]
+}

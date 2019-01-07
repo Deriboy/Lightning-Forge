@@ -1,0 +1,15 @@
+[
+{
+  "modid": "lightning_forge",
+  "name": "Lightning Forge",
+  "description": "Sandbox.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Deriboy"],
+  "credits": "",
+  "logoFile": "assets/icon.jpg",
+  "dependencies": []
+}
+]

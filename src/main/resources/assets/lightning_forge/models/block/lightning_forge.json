@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "lightning_forge:blocks/lightning_forge_bottom",
+    "up": "lightning_forge:blocks/lightning_forge_top",
+    "north": "lightning_forge:blocks/lightning_forge_front",
+    "down": "lightning_forge:blocks/lightning_forge_bottom",
+    "east": "lightning_forge:blocks/lightning_forge_side1",
+    "south": "lightning_forge:blocks/lightning_forge_side2",
+    "west": "lightning_forge:blocks/lightning_forge_side3"
+  }
+}
