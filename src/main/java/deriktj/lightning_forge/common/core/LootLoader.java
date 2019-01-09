@@ -5,6 +5,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.LootEntry;
 import net.minecraft.world.storage.loot.LootEntryTable;
 import net.minecraft.world.storage.loot.LootPool;
+import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraft.world.storage.loot.RandomValueRange;
 import net.minecraft.world.storage.loot.conditions.LootCondition;
 import net.minecraftforge.event.LootTableLoadEvent;
@@ -13,6 +14,10 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Mod.EventBusSubscriber
 public class LootLoader {
+
+    public LootLoader() {
+        LootTableList.register(new ResourceLocation(ModLightningForge.MODID,"artifact_pieces_loot"));
+    }
 
     @SubscribeEvent
     public static void loadLoot(LootTableLoadEvent event) {
@@ -31,8 +36,8 @@ public class LootLoader {
             case "minecraft:chests/village_blacksmith":
             case "minecraft:chests/woodland_mansion":
             case "minecraft:chests/end_city_treasure":
-                LootEntry entry = new LootEntryTable(new ResourceLocation("lightning_forge:artifact_pieces_loot"), 0, 1,new LootCondition[0], "lightning_forge_loot_entry");
-                LootPool pool = new LootPool(new LootEntry[] {entry},new LootCondition[0], new RandomValueRange(0),new RandomValueRange(0, 1), "lightning_forge_loot_pool");
+                LootEntry entry = new LootEntryTable(new ResourceLocation(ModLightningForge.MODID, "artifact_pieces_loot"), 1, 0,new LootCondition[0], "lightning_forge_loot_entry");
+                LootPool pool = new LootPool(new LootEntry[] {entry},new LootCondition[0], new RandomValueRange(1),new RandomValueRange(0, 1), "lightning_forge_loot_pool");
                 event.getTable().addPool(pool);
                 break;
             default:

@@ -15,6 +15,7 @@ public class ModLightningForge
     public static final String MODID = "lightning_forge";
     public static final String NAME = "Lightning Forge";
     public static final String VERSION = "0.1";
+    public static final String CONFIGNAME = "lightning_forge";
 
     @SidedProxy(clientSide = "deriktj.lightning_forge.client.core.ClientProxy", serverSide = "deriktj.lightning_forge.common.core.ServerProxy")
     public static CommonProxy proxy;
