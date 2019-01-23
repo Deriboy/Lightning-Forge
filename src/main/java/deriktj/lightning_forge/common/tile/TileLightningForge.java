@@ -32,7 +32,6 @@ import java.util.Random;
 /**
  *
  */
-@Mod.EventBusSubscriber
 public class TileLightningForge extends TileEntity {
 
     // static stuff begins
@@ -72,24 +71,6 @@ public class TileLightningForge extends TileEntity {
 
 
     };
-
-    @SubscribeEvent
-    public static void mainLightningStrikeEventHandler(LightningStrikeEvent event) {
-        for (TileEntity t : event.getEntity().getEntityWorld().loadedTileEntityList){
-            if (t instanceof TileLightningForge){
-                ((TileLightningForge) t).lightningStrikeEventHandler(event);
-            }
-        }
-    }
-
-    @SubscribeEvent
-    public static void mainLightningSpawnEventHandler(EntityJoinWorldEvent event) {
-        for (TileEntity t : event.getEntity().getEntityWorld().loadedTileEntityList){
-            if (t instanceof TileLightningForge){
-                ((TileLightningForge) t).lightningSpawnEventHandler(event);
-            }
-        }
-    }
 
     public TileLightningForge(World world){
         super();
@@ -180,7 +161,7 @@ public class TileLightningForge extends TileEntity {
 
         BlockPos strikePos = event.getEntity().getPosition();
         if(strikePos.equals(getPos().add(0,getRodHeight()+1,0))) {
-            if(currentRecipe != null && event.getEntity().getEntityWorld().isThundering()) {
+            if(currentRecipe != null && currentRecipe.validRecipe(getInventory(null)) && currentRecipe.validRod(getRodQuality()) && event.getEntity().getEntityWorld().isThundering()) {
                 craft();
             }
         }
@@ -196,8 +177,7 @@ public class TileLightningForge extends TileEntity {
         }
         getRodQuality();
         int rodHeight = getRodHeight();
-        if(rodHeight == 0)
-        {
+        if(rodHeight == 0) {
             return;
         }
 
@@ -215,7 +195,7 @@ public class TileLightningForge extends TileEntity {
         else {
             lftag = new NBTTagCompound();
             lftag.setInteger("origx",bolt.getPosition().getX());
-            lftag.setInteger("origy",bolt.getPosition().getY()); //TODO: Fix this so it doesn't always steal natural spawns
+            lftag.setInteger("origy",bolt.getPosition().getY()); // TODO: Fix this so it doesn't always steal natural spawns
             lftag.setInteger("origz",bolt.getPosition().getZ());
             data.setTag("lf",lftag);
             float max_horiz_dist = 100.0f;
@@ -280,7 +260,6 @@ public class TileLightningForge extends TileEntity {
                 sum += LightningForgeAPI.rodQualityOf(block) * (1 - Math.tanh(y/3 - 2))/2;
             }
         }
-        float quality = ((rodHeight == 0) ? 0 : (sum));
         ModLightningForge.logger.info("Rod Quality: " + sum);
         return sum;
     }

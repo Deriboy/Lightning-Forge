@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lightning_forge:blocks/fulgurite_block_red_sand"
+  }
+}

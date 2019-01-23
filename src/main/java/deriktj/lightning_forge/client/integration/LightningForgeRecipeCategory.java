@@ -25,7 +25,7 @@ public class LightningForgeRecipeCategory implements IRecipeCategory {
     public LightningForgeRecipeCategory(IGuiHelper guiHelper) {
         this.background = guiHelper.createBlankDrawable(168,50);
         this.localizedName = I18n.format(ModLightningForge.MODID + ".jei.lightningForge");
-        overlay = guiHelper.createDrawable(new ResourceLocation(ModLightningForge.MODID, "textures/gui/lightning_forge_overlay2.png"),
+        overlay = guiHelper.createDrawable(new ResourceLocation(ModLightningForge.MODID, "textures/gui/lightning_forge_overlay.png"),
                 0, 0, 168, 50);
     }
 

@@ -10,7 +10,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -28,8 +27,8 @@ import javax.annotation.Nullable;
 
 
 public class BlockLightningForge extends FacingBlock implements ITileEntityProvider {
-    private String name = "lightning_forge";
 
+    private String name = "lightning_forge";
 
     @Override
     public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
@@ -60,8 +59,6 @@ public class BlockLightningForge extends FacingBlock implements ITileEntityProvi
     public void initModel() {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
     }
-
-
 
     @Override
     public boolean onBlockActivated(World worldIn,

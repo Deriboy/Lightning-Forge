@@ -58,7 +58,7 @@ public class RecipeLightningForge {
         return required.isEmpty() && usedC == 4;
     }
 
-    public boolean validRod(int rodQuality) {
+    public boolean validRod(float rodQuality) {
         return rodQuality >= minimumRodQuality;
     }
 

@@ -24,5 +24,6 @@ public class ModRecipes {
                 new ItemStack(Items.NETHER_STAR),
                 new ItemStack(Items.STICK)
                 );
+
     }
 }

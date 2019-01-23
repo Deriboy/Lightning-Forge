@@ -1,5 +1,9 @@
 tile.lightning_forge.lightning_forge.name=Small Lightning Forge
+tile.lightning_forge.fulgurite.name=Fulgurite
+tile.lightning_forge.red_fulgurite.name=Red Fulgurite
 lightning_forge.jei.lightningForge=Lightning Forge
 item.lightning_forge.ancient_pickaxe.name=Ancient Prospector's Pickaxe
 item.lightning_forge.artifact_piece_pickaxe.name=Artifact Pickaxe Fragment
 item.lightning_forge.artifact_piece_spear.name=Artifact Spear Fragment
+item.lightning_forge.fulgurite_shard_sand.name=Fulgurite Shard
+item.lightning_forge.fulgurite_shard_red_sand.name=Red Fulgurite Shard

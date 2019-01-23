@@ -1,10 +1,13 @@
 package deriktj.lightning_forge.common.core;
 
+import deriktj.lightning_forge.common.block.BlockFulgurite;
+import deriktj.lightning_forge.common.block.BlockRedFulgurite;
 import deriktj.lightning_forge.common.block.ModBlocks;
 import deriktj.lightning_forge.common.ModLightningForge;
 import deriktj.lightning_forge.common.block.BlockLightningForge;
 import deriktj.lightning_forge.common.item.ItemAncientPickaxe;
 import deriktj.lightning_forge.common.item.ItemArtifactPiece;
+import deriktj.lightning_forge.common.item.ItemFulguriteShard;
 import deriktj.lightning_forge.common.recipe.ModRecipes;
 import deriktj.lightning_forge.common.tile.TileLightningForge;
 import net.minecraft.block.Block;
@@ -47,12 +50,17 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         event.getRegistry().register(new BlockLightningForge());
+        event.getRegistry().register(new BlockFulgurite());
+        event.getRegistry().register(new BlockRedFulgurite());
         GameRegistry.registerTileEntity(TileLightningForge.class,new ResourceLocation(ModLightningForge.MODID,"lightning_forge"));
     }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().register(new ItemBlock(ModBlocks.lightning_forge).setRegistryName(ModBlocks.lightning_forge.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.fulgurite).setRegistryName(ModBlocks.fulgurite.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.red_fulgurite).setRegistryName(ModBlocks.red_fulgurite.getRegistryName()));
+        event.getRegistry().register(new ItemFulguriteShard());
         event.getRegistry().register(new ItemAncientPickaxe());
         event.getRegistry().register(new ItemArtifactPiece());
     }

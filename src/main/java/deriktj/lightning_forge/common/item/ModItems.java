@@ -12,9 +12,14 @@ public class ModItems {
     @GameRegistry.ObjectHolder("lightning_forge:artifact_piece")
     public static ItemArtifactPiece artifact_piece;
 
+    @GameRegistry.ObjectHolder("lightning_forge:fulgurite_shard")
+    public static ItemFulguriteShard fulgurite_shard;
+
     @SideOnly(Side.CLIENT)
     public static void initModels() {
         ancient_pickaxe.initModel();
         artifact_piece.initModel();
+        fulgurite_shard.initModel();
+
     }
 }
