@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "lightning_forge:white_lightning_glass"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

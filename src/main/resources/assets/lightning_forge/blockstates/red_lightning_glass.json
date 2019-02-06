@@ -1,7 +1,7 @@
 {
   "forge_marker": 1,
   "defaults": {
-    "model": "lightning_forge:fulgurite"
+    "model": "lightning_forge:red_lightning_glass"
   },
   "variants": {
     "normal": [{}],

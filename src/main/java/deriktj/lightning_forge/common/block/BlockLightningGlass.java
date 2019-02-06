@@ -1,4 +1,5 @@
 package deriktj.lightning_forge.common.block;
+
 import deriktj.lightning_forge.common.ModLightningForge;
 import deriktj.lightning_forge.common.item.ModItems;
 import net.minecraft.block.Block;
@@ -7,7 +8,9 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -19,38 +22,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nonnull;
 import java.util.Random;
 
-public class BlockRedFulgurite extends Block{
+public class BlockLightningGlass extends BlockBase {
 
-    private String name = "red_fulgurite";
 
-    public BlockRedFulgurite() {
-        super(Material.GLASS);
-        setRegistryName(name);
-        setUnlocalizedName(ModLightningForge.MODID + "." + name);
-        setHardness(1f);
-        setLightLevel(0f);
-        setSoundType(SoundType.GLASS);
-        setCreativeTab(CreativeTabs.MATERIALS);
+    public BlockLightningGlass(String name) {
+        super(name,0.25f,0,SoundType.GLASS,CreativeTabs.BUILDING_BLOCKS,Material.GLASS);
     }
 
     @Override
-    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-        return ModItems.fulgurite_shard;
-    }
-
-    @Override
-    public int quantityDropped(Random random) {
-        return random.nextInt(4) + 1;
-    }
-
-    @Override
-    public int quantityDroppedWithBonus(int fortune, Random random) {
-        return Math.min(quantityDropped(random) + fortune,4);
-    }
-
-    @Override
-    public int damageDropped(IBlockState state) {
-        return 1;
+    protected ItemStack getSilkTouchDrop(IBlockState state) {
+        return new ItemStack(this);
     }
 
     @Override
@@ -75,12 +56,5 @@ public class BlockRedFulgurite extends Block{
     {
         return BlockRenderLayer.TRANSLUCENT;
     }
-
-    @SideOnly(Side.CLIENT)
-    public void initModel() {
-        ModLightningForge.logger.info(getRegistryName());
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
-    }
-
 
 }

@@ -22,23 +22,18 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nonnull;
 import java.util.Random;
 
-public class BlockFulgurite extends Block{
+public class BlockFulgurite extends BlockBase{
 
-    private String name = "fulgurite";
+    private Item drop;
 
-    public BlockFulgurite() {
-        super(Material.GLASS);
-        setRegistryName(name);
-        setUnlocalizedName(ModLightningForge.MODID + "." + name);
-        setHardness(1f);
-        setLightLevel(0f);
-        setSoundType(SoundType.GLASS);
-        setCreativeTab(CreativeTabs.MATERIALS);
+    public BlockFulgurite(String name, Item drop) {
+        super(name,0.5f, 0,SoundType.GLASS,CreativeTabs.BUILDING_BLOCKS,Material.GLASS);
+        this.drop = drop;
     }
 
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-        return ModItems.fulgurite_shard;
+        return drop;
     }
 
     @Override
@@ -49,11 +44,6 @@ public class BlockFulgurite extends Block{
     @Override
     public int quantityDroppedWithBonus(int fortune, Random random) {
         return Math.min(quantityDropped(random) + fortune,4);
-    }
-
-    @Override
-    public int damageDropped(IBlockState state) {
-        return 0;
     }
 
     @Override
@@ -78,12 +68,5 @@ public class BlockFulgurite extends Block{
     {
         return BlockRenderLayer.TRANSLUCENT;
     }
-
-    @SideOnly(Side.CLIENT)
-    public void initModel() {
-        ModLightningForge.logger.info(getRegistryName());
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
-    }
-
 
 }

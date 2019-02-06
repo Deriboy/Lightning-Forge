@@ -22,7 +22,7 @@ public class LightningHandler {
         World world = event.getEntity().getEntityWorld();
         BlockPos groundPos = pos.add(0,-1,0);
         if(!world.isRemote && world.getBlockState(groundPos).getBlock() == Blocks.SAND) {
-            buildFulguriteStructure(world,groundPos);
+            LightningHelper.buildFulguriteStructure(world,groundPos);
         }
 
         for (TileEntity t : event.getEntity().getEntityWorld().loadedTileEntityList){
@@ -41,17 +41,5 @@ public class LightningHandler {
         }
     }
 
-    private static void buildFulguriteStructure(World world, BlockPos pos) {
-        for (BlockPos blockPos : BlockPos.getAllInBox(pos.getX()-1,pos.getY()-1,pos.getZ()-1,pos.getX()+1,pos.getY(),pos.getZ()+1)) {
-            if((blockPos.equals(pos) || world.rand.nextDouble() < 0.25)){
-                ModLightningForge.logger.info(world.getBlockState(pos).getPropertyKeys());
-                if(world.getBlockState(blockPos).getProperties().get(BlockSand.VARIANT) == BlockSand.EnumType.SAND) {
-                    world.setBlockState(blockPos, ModBlocks.fulgurite.getDefaultState());
-                }
-                else if(world.getBlockState(blockPos).getProperties().get(BlockSand.VARIANT) == BlockSand.EnumType.RED_SAND) {
-                    world.setBlockState(blockPos, ModBlocks.red_fulgurite.getDefaultState());
-                }
-            }
-        }
-    }
+
 }

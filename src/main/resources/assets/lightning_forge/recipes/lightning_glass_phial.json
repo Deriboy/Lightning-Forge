@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "G G",
+    " G "
+  ],
+  "key": {
+    "C": [
+      {
+        "item": "minecraft:wooden_button",
+        "data": 0
+      }
+
+    ],
+    "G": [
+      {
+        "item": "lightning_forge:lightning_glass",
+        "data": 0
+      },
+      {
+        "item": "lightning_forge:red_lightning_glass",
+        "data": 0
+      }
+    ]
+  },
+  "result": {
+    "item": "lightning_forge:lightning_glass_phial",
+    "data": 0,
+    "count": 4
+  }
+}

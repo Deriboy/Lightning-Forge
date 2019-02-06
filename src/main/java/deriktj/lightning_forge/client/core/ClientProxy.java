@@ -3,10 +3,15 @@ package deriktj.lightning_forge.client.core;
 import deriktj.lightning_forge.common.block.ModBlocks;
 import deriktj.lightning_forge.client.blocks.render.LightningForgeFastTESR;
 import deriktj.lightning_forge.common.core.CommonProxy;
+import deriktj.lightning_forge.common.entity.EntityBottledLightning;
+import deriktj.lightning_forge.common.entity.ModEntities;
 import deriktj.lightning_forge.common.item.ModItems;
 import deriktj.lightning_forge.common.tile.TileLightningForge;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -23,6 +28,10 @@ public class ClientProxy extends CommonProxy {
     public static void registerModels(ModelRegistryEvent event) {
         ModBlocks.initModels();
         ModItems.initModels();
+        ModEntities.initModels();
         ClientRegistry.bindTileEntitySpecialRenderer(TileLightningForge.class, LightningForgeFastTESR.SINGLETON);
+
+
+
     }
 }

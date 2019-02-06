@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "DAD",
-    "SFS",
+    "GFG",
     "RER"  ],
   "key": {
     "D": [
@@ -23,14 +23,14 @@
         "data": 0
       }
     ],
-    "S": [
+    "G": [
       {
-        "item": "lightning_forge:fulgurite_shard",
+        "item": "lightning_forge:lightning_glass",
         "data": 0
       },
       {
-        "item": "lightning_forge:fulgurite_shard",
-        "data": 1
+        "item": "lightning_forge:red_lightning_glass",
+        "data": 0
       }
     ],
     "R": [

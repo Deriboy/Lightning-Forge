@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": [
+      {
+        "item": "lightning_forge:fulgurite_shard_white"
+      }
+    ]
+  },
+  "result": {
+    "item": "lightning_forge:white_fulgurite"
+  }
+}

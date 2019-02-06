@@ -21,7 +21,6 @@ public class LootLoader {
 
     @SubscribeEvent
     public static void loadLoot(LootTableLoadEvent event) {
-        ModLightningForge.logger.info("LOOT! " + event.getName());
         switch(event.getName().toString()) {
             case "minecraft:chests/stronghold_corridor":
             case "minecraft:chests/simple_dungeon":

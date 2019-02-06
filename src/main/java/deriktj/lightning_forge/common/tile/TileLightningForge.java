@@ -41,10 +41,8 @@ public class TileLightningForge extends TileEntity {
 
     public static void init() {
         LightningForgeAPI.registerValidRodBlock(Blocks.IRON_BARS,5);
-        LightningForgeAPI.registerValidRodBlock(Blocks.NETHER_BRICK_FENCE,7);
 
         LightningForgeAPI.registerValidRodBaseBlock(Blocks.IRON_BARS,5);
-        LightningForgeAPI.registerValidRodBaseBlock(Blocks.NETHER_BRICK_FENCE,7);
         LightningForgeAPI.registerValidRodBaseBlock(Blocks.END_ROD,45);
     }
 
@@ -189,6 +187,7 @@ public class TileLightningForge extends TileEntity {
         }
 
         NBTTagCompound lftag;
+
         if(data.hasKey("lf")) {
             lftag = (NBTTagCompound) data.getTag("lf");
         }
@@ -197,11 +196,16 @@ public class TileLightningForge extends TileEntity {
             lftag.setInteger("origx",bolt.getPosition().getX());
             lftag.setInteger("origy",bolt.getPosition().getY()); // TODO: Fix this so it doesn't always steal natural spawns
             lftag.setInteger("origz",bolt.getPosition().getZ());
+
             data.setTag("lf",lftag);
             float max_horiz_dist = 100.0f;
             if(getPos().getDistance(bolt.getPosition().getX(),getPos().getY(),bolt.getPosition().getZ()) <= max_horiz_dist) {
                 bolt.setPosition(myPos.getX(),myPos.getY(),myPos.getZ());
             }
+            return;
+        }
+
+        if(lftag.hasKey("canredirect") && !lftag.getBoolean("canredirect")) {
             return;
         }
 
