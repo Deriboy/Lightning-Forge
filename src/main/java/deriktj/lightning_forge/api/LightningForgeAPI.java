@@ -13,6 +13,8 @@ import java.util.*;
 
 public class LightningForgeAPI {
 
+    //TODO: Refactor basically everything to use interfaces in the api
+
     public static List<RecipeLightningForge> lightningForgeRecipes = new ArrayList<>();
 
     public static Map<Block,Integer> valid_rod_blocks = new HashMap<>();

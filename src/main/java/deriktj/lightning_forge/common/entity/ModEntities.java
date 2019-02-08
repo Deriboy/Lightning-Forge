@@ -1,6 +1,6 @@
 package deriktj.lightning_forge.common.entity;
 
-import deriktj.lightning_forge.common.ModLightningForge;
+import deriktj.lightning_forge.common.core.ModLightningForge;
 import deriktj.lightning_forge.common.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.RenderSnowball;

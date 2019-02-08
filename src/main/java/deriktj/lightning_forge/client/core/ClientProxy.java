@@ -1,5 +1,6 @@
 package deriktj.lightning_forge.client.core;
 
+import deriktj.lightning_forge.common.block.BlockBaseLeaves;
 import deriktj.lightning_forge.common.block.ModBlocks;
 import deriktj.lightning_forge.client.blocks.render.LightningForgeFastTESR;
 import deriktj.lightning_forge.common.core.CommonProxy;
@@ -30,8 +31,10 @@ public class ClientProxy extends CommonProxy {
         ModItems.initModels();
         ModEntities.initModels();
         ClientRegistry.bindTileEntitySpecialRenderer(TileLightningForge.class, LightningForgeFastTESR.SINGLETON);
-
-
-
     }
+
+    public void setGraphicsLevel(BlockBaseLeaves blockBaseLeaves, boolean b) {
+        blockBaseLeaves.setGraphicsLevel(b);
+    }
+
 }

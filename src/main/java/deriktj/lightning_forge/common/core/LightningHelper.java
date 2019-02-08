@@ -1,6 +1,5 @@
 package deriktj.lightning_forge.common.core;
 
-import deriktj.lightning_forge.common.ModLightningForge;
 import deriktj.lightning_forge.common.block.ModBlocks;
 import net.minecraft.block.BlockSand;
 import net.minecraft.entity.effect.EntityLightningBolt;

@@ -1,0 +1,36 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "inventory": [
+      {
+        "model": "lightning_forge:frozen_log"
+      }
+    ],
+    "axis": {
+      "y": {
+        "model": "lightning_forge:frozen_log"
+      },
+      "x": {
+        "model": "lightning_forge:frozen_log", "x": 90, "y": 90
+      },
+      "z": {
+        "model": "lightning_forge:frozen_log", "x": 90
+      },
+      "none": {
+        "model": "lightning_forge:frozen_bark"
+      }
+    },
+    "alive": {
+      "alive": {
+        "textures": {
+          "side": "lightning_forge:blocks/log_frozen"
+        }
+      },
+      "dead": {
+        "textures": {
+          "side": "lightning_forge:blocks/log_frozen"
+        }
+      }
+    }
+  }
+}

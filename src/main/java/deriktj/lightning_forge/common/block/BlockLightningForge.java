@@ -1,6 +1,6 @@
 package deriktj.lightning_forge.common.block;
 
-import deriktj.lightning_forge.common.ModLightningForge;
+import deriktj.lightning_forge.common.core.ModLightningForge;
 import deriktj.lightning_forge.common.tile.TileLightningForge;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;

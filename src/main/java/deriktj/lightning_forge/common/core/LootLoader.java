@@ -1,6 +1,5 @@
 package deriktj.lightning_forge.common.core;
 
-import deriktj.lightning_forge.common.ModLightningForge;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.LootEntry;
 import net.minecraft.world.storage.loot.LootEntryTable;

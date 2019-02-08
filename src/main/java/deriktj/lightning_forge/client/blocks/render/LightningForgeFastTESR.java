@@ -1,6 +1,5 @@
 package deriktj.lightning_forge.client.blocks.render;
 
-import deriktj.lightning_forge.common.ModLightningForge;
 import deriktj.lightning_forge.common.tile.TileLightningForge;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;

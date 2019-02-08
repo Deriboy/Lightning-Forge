@@ -1,9 +1,6 @@
 package deriktj.lightning_forge.common.core;
 
-import deriktj.lightning_forge.common.ModLightningForge;
-import deriktj.lightning_forge.common.block.ModBlocks;
 import deriktj.lightning_forge.common.tile.TileLightningForge;
-import net.minecraft.block.BlockSand;
 import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;

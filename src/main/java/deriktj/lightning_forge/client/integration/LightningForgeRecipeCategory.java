@@ -1,6 +1,6 @@
 package deriktj.lightning_forge.client.integration;
 
-import deriktj.lightning_forge.common.ModLightningForge;
+import deriktj.lightning_forge.common.core.ModLightningForge;
 import mezz.jei.api.IGuiHelper;
 import mezz.jei.api.gui.IDrawable;
 import mezz.jei.api.gui.IRecipeLayout;

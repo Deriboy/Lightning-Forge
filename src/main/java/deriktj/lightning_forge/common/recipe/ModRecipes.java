@@ -3,15 +3,10 @@ package deriktj.lightning_forge.common.recipe;
 import deriktj.lightning_forge.api.LightningForgeAPI;
 import deriktj.lightning_forge.api.recipe.RecipeLightningForge;
 import deriktj.lightning_forge.common.block.ModBlocks;
-import deriktj.lightning_forge.common.item.ItemAncientPickaxe;
 import deriktj.lightning_forge.common.item.ModItems;
-import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ModRecipes {
 

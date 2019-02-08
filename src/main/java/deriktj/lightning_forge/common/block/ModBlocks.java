@@ -16,8 +16,19 @@ public class ModBlocks {
 
     @GameRegistry.ObjectHolder("lightning_forge:white_lightning_glass")
     public static BlockLightningGlass white_lightning_glass;
+
     @GameRegistry.ObjectHolder("lightning_forge:red_lightning_glass")
     public static BlockLightningGlass red_lightning_glass;
+
+    @GameRegistry.ObjectHolder("lightning_forge:frozen_log")
+    public static BlockWorldTreeLog frozen_log;
+
+    @GameRegistry.ObjectHolder("lightning_forge:frozen_leaves")
+    public static BlockWorldTreeLeaves frozen_leaves;
+
+    @GameRegistry.ObjectHolder("lightning_forge:frozen_sapling")
+    public static BlockWorldTreeSapling frozen_sapling;
+
 
     @SideOnly(Side.CLIENT)
     public static void initModels() {
@@ -26,5 +37,8 @@ public class ModBlocks {
         red_fulgurite.initModel();
         white_lightning_glass.initModel();
         red_lightning_glass.initModel();
+        frozen_log.initModel();
+        frozen_leaves.initModel();
+        frozen_sapling.initModel();
     }
 }

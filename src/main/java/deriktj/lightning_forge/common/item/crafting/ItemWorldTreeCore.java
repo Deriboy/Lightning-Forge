@@ -1,5 +1,6 @@
-package deriktj.lightning_forge.common.item;
+package deriktj.lightning_forge.common.item.crafting;
 
+import deriktj.lightning_forge.common.item.ItemBase;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
@@ -9,10 +10,10 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ItemFulguriteShard extends ItemBase {
+public class ItemWorldTreeCore extends ItemBase {
 
-    public ItemFulguriteShard(String name) {
-        super(name,CreativeTabs.MATERIALS);
+    public ItemWorldTreeCore(String name) {
+        super(name, CreativeTabs.MATERIALS);
     }
 
     @Override

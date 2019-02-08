@@ -1,13 +1,8 @@
 package deriktj.lightning_forge.common.block;
-import deriktj.lightning_forge.common.ModLightningForge;
-import deriktj.lightning_forge.common.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -15,7 +10,6 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -26,14 +20,19 @@ public class BlockFulgurite extends BlockBase{
 
     private Item drop;
 
-    public BlockFulgurite(String name, Item drop) {
+    public BlockFulgurite(String name) {
         super(name,0.5f, 0,SoundType.GLASS,CreativeTabs.BUILDING_BLOCKS,Material.GLASS);
-        this.drop = drop;
+
     }
 
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
         return drop;
+    }
+
+    @Override
+    protected ItemStack getSilkTouchDrop(IBlockState state) {
+        return new ItemStack(this);
     }
 
     @Override
@@ -67,6 +66,10 @@ public class BlockFulgurite extends BlockBase{
     public BlockRenderLayer getBlockLayer()
     {
         return BlockRenderLayer.TRANSLUCENT;
+    }
+
+    public void setDrop(Item drop) {
+        this.drop = drop;
     }
 
 }

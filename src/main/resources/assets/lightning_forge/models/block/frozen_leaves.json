@@ -1,0 +1,6 @@
+{
+  "parent": "block/leaves",
+  "textures": {
+    "all": "lightning_forge:blocks/frozen_leaves"
+  }
+}

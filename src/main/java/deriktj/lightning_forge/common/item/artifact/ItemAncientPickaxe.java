@@ -1,7 +1,7 @@
-package deriktj.lightning_forge.common.item;
+package deriktj.lightning_forge.common.item.artifact;
 
 import deriktj.lightning_forge.api.LightningForgeAPI;
-import deriktj.lightning_forge.common.ModLightningForge;
+import deriktj.lightning_forge.common.core.ModLightningForge;
 import deriktj.lightning_forge.common.core.Config;
 import deriktj.lightning_forge.common.core.NBTHelper;
 import net.minecraft.block.Block;
@@ -10,7 +10,6 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumRarity;
@@ -25,7 +24,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;

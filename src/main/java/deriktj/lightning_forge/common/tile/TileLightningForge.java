@@ -2,11 +2,10 @@ package deriktj.lightning_forge.common.tile;
 
 import deriktj.lightning_forge.api.LightningForgeAPI;
 import deriktj.lightning_forge.api.recipe.RecipeLightningForge;
-import deriktj.lightning_forge.common.ModLightningForge;
+import deriktj.lightning_forge.common.core.ModLightningForge;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.EntityLightningBolt;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -19,14 +18,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.LightningStrikeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 /**

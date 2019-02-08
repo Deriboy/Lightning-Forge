@@ -1,9 +1,8 @@
 package deriktj.lightning_forge.common.block;
 
-import deriktj.lightning_forge.common.ModLightningForge;
+import deriktj.lightning_forge.common.core.ModLightningForge;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -16,7 +15,7 @@ public class BlockBase extends Block {
 
     private String name;
 
-    public BlockBase(String name, float hardness, int lightLevel, SoundType soundType, CreativeTabs tab, Material materialIn) {
+    public BlockBase(String name, float hardness, float lightLevel, SoundType soundType, CreativeTabs tab, Material materialIn) {
         super(materialIn);
         this.name = name;
         setRegistryName(name);

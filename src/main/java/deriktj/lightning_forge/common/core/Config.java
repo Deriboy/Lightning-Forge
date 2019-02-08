@@ -1,6 +1,5 @@
 package deriktj.lightning_forge.common.core;
 
-import deriktj.lightning_forge.common.ModLightningForge;
 import net.minecraftforge.common.config.Configuration;
 import org.apache.logging.log4j.Level;
 

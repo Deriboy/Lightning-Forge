@@ -1,13 +1,8 @@
 package deriktj.lightning_forge.api.recipe;
 
 import com.google.common.collect.ImmutableList;
-import deriktj.lightning_forge.common.ModLightningForge;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTBase;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.items.IItemHandler;
-import scala.Array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
