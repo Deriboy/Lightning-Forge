@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "normal": { "model": "lightning_forge:frozen_planks" }
+  }
+}

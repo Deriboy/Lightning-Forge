@@ -1,4 +1,4 @@
-package deriktj.lightning_forge.common.block;
+package deriktj.lightning_forge.common.block.base;
 
 import deriktj.lightning_forge.common.core.ModLightningForge;
 import net.minecraft.block.BlockLog;

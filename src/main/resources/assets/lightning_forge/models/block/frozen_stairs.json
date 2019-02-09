@@ -1,0 +1,9 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "lightning_forge:blocks/frozen_planks",
+    "top": "lightning_forge:blocks/frozen_planks",
+    "side": "lightning_forge:blocks/frozen_planks",
+    "particle": "lightning_forge:blocks/frozen_planks"
+  }
+}

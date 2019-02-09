@@ -2,8 +2,8 @@
   "forge_marker": 1,
   "variants": {
     "normal": [{ }],
-    "inventory": [{ "model": "lightning_forge:item/frozen_sapling"}],
-    "stage=0":[{"model": "lightning_forge:frozen_sapling" }],
-    "stage=1":[{ "model": "lightning_forge:frozen_sapling"}]
+    "inventory": [{ "model":"lightning_forge:item/frozen_sapling"}],
+    "stage=0":[{ "model":"lightning_forge:frozen_sapling" }],
+    "stage=1":[{ "model":"lightning_forge:frozen_sapling" }]
   }
 }

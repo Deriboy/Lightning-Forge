@@ -1,5 +1,9 @@
 package deriktj.lightning_forge.common.block;
 
+import deriktj.lightning_forge.common.block.base.BlockBaseFence;
+import deriktj.lightning_forge.common.block.base.BlockBaseFenceGate;
+import deriktj.lightning_forge.common.block.base.BlockBaseSlab;
+import deriktj.lightning_forge.common.block.base.BlockBaseStairs;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -29,6 +33,30 @@ public class ModBlocks {
     @GameRegistry.ObjectHolder("lightning_forge:frozen_sapling")
     public static BlockWorldTreeSapling frozen_sapling;
 
+    @GameRegistry.ObjectHolder("lightning_forge:frozen_planks")
+    public static BlockWorldTreePlanks frozen_planks;
+
+    @GameRegistry.ObjectHolder("lightning_forge:frozen_fence")
+    public static BlockBaseFence frozen_fence;
+
+    @GameRegistry.ObjectHolder("lightning_forge:frozen_fence_gate")
+    public static BlockBaseFenceGate frozen_fence_gate;
+
+    @GameRegistry.ObjectHolder("lightning_forge:frozen_slab")
+    public static BlockBaseSlab frozen_slab;
+
+    @GameRegistry.ObjectHolder("lightning_forge:frozen_slab_double")
+    public static BlockBaseSlab frozen_slab_double;
+
+    @GameRegistry.ObjectHolder("lightning_forge:frozen_stairs")
+    public static BlockBaseStairs frozen_stairs;
+
+    @GameRegistry.ObjectHolder("lightning_forge:scorched_slab_double")
+    public static BlockBaseSlab scorched_slab_double;
+
+    @GameRegistry.ObjectHolder("lightning_forge:scorched_slab")
+    public static BlockBaseSlab scorched_slab;
+
 
     @SideOnly(Side.CLIENT)
     public static void initModels() {
@@ -40,5 +68,14 @@ public class ModBlocks {
         frozen_log.initModel();
         frozen_leaves.initModel();
         frozen_sapling.initModel();
+        frozen_planks.initModel();
+        frozen_fence.initModel();
+        frozen_fence_gate.initModel();
+        frozen_slab.initModel();
+        frozen_slab_double.initModel();
+        frozen_stairs.initModel();
+
+        scorched_slab.initModel();
+        scorched_slab_double.initModel();
     }
 }

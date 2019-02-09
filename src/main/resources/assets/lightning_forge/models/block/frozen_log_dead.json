@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_column",
-  "textures": {
-    "end": "lightning_forge:blocks/log_frozen_top",
-    "side": "lightning_forge:blocks/log_frozen_dead"
-  }
-}

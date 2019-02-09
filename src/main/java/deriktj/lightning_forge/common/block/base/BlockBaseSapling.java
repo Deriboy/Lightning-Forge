@@ -1,4 +1,4 @@
-package deriktj.lightning_forge.common.block;
+package deriktj.lightning_forge.common.block.base;
 
 import deriktj.lightning_forge.common.core.ModLightningForge;
 import net.minecraft.block.BlockBush;
@@ -27,6 +27,15 @@ import java.util.Random;
 
 public abstract class BlockBaseSapling extends BlockBush implements IGrowable{
 
+
+    WorldGenerator generator;
+
+    public void setGenerator(WorldGenerator generator) {
+        this.generator = generator;
+    }
+    public WorldGenerator getGenerator() {
+        return generator;
+    }
 
     public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
     protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D, 0.09999999403953552D, 0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);

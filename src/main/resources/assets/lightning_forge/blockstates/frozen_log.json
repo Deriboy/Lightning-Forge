@@ -23,12 +23,12 @@
     "alive": {
       "alive": {
         "textures": {
-          "side": "lightning_forge:blocks/log_frozen"
+          "side": "lightning_forge:blocks/frozen_log"
         }
       },
       "dead": {
         "textures": {
-          "side": "lightning_forge:blocks/log_frozen"
+          "side": "lightning_forge:blocks/frozen_log"
         }
       }
     }

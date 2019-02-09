@@ -3,6 +3,7 @@ package deriktj.lightning_forge.common.item.artifact;
 import deriktj.lightning_forge.common.core.ModLightningForge;
 import deriktj.lightning_forge.common.core.NBTHelper;
 import deriktj.lightning_forge.common.item.ItemBase;
+import deriktj.lightning_forge.common.network.WorldParticleMessage;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
@@ -23,11 +24,13 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -40,17 +43,21 @@ public class ItemFrostOrb extends ItemBase {
     private static final String TAG_CHARGE = "charge";
     private static final int MAX_CHARGE = 4000;
     private static final int CHARGE_ON_USE = 20;
+    private static final int MAX_USE_TICKS = 60;
 
     public ItemFrostOrb() {
         super("frost_orb", CreativeTabs.MISC);
         setMaxStackSize(1);
+
+        setMaxDamage(MAX_USE_TICKS);
     }
 
     @Override
     public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
         if(!((EntityPlayer) entityIn).isHandActive() || !isSelected) {
+
             float temp = worldIn.getBiome(entityIn.getPosition()).getTemperature(entityIn.getPosition());
-            ModLightningForge.logger.info("temp: " + temp);
+            //ModLightningForge.logger.info("temp: " + temp);
             int change = 1;
             if(temp > 1.0f) {
                 change = 0;
@@ -58,7 +65,6 @@ public class ItemFrostOrb extends ItemBase {
             else if (temp < 0.4f) {
                 change = 2;
             }
-
             int curCharge = NBTHelper.getInteger(stack,TAG_CHARGE,0);
             int newCharge = Math.min(curCharge + change,MAX_CHARGE);
             NBTHelper.setInteger(stack,TAG_CHARGE,newCharge);
@@ -66,8 +72,18 @@ public class ItemFrostOrb extends ItemBase {
     }
 
     @Override
+    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
+
+        if (isInCreativeTab(tab)) {
+            items.add(getDefaultInstance());
+        }
+
+    }
+
+
+    @Override
     public boolean canContinueUsing(ItemStack oldStack, ItemStack newStack) {
-        return oldStack == newStack;
+        return true;
     }
 
     @Override
@@ -112,7 +128,7 @@ public class ItemFrostOrb extends ItemBase {
 
     @Override
     public int getMaxItemUseDuration(ItemStack stack) {
-        return 60; //ticks - 3 seconds
+        return MAX_USE_TICKS; //ticks - 3 seconds
     }
 
     @Override
@@ -128,18 +144,21 @@ public class ItemFrostOrb extends ItemBase {
     @Override
     public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityLivingBase entityLiving, int timeLeft) {
         activate(stack,entityLiving,getMaxItemUseDuration(stack)-timeLeft);
+        setDamage(stack,0);
         super.onPlayerStoppedUsing(stack,worldIn,entityLiving,timeLeft);
     }
 
     @Override
     public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
         activate(stack,entityLiving,getMaxItemUseDuration(stack));
+        setDamage(stack,0);
         return stack;
     }
 
     @Override
     public void onUsingTick(ItemStack stack, EntityLivingBase living, int count) {
         if(!living.world.isRemote) {
+            setDamage(stack,count);
             if(getCharge(stack) < CHARGE_ON_USE && getMaxItemUseDuration(stack) - count > 20) {
                 living.stopActiveHand();
             }
@@ -162,15 +181,16 @@ public class ItemFrostOrb extends ItemBase {
             }
 
             world.playSound(null, entity.posX, entity.posY, entity.posZ, SoundEvents.ENTITY_FIREWORK_LARGE_BLAST, SoundCategory.PLAYERS, power / getMaxItemUseDuration(stack) + 0.15f, 5f);
-            spawnParticles(world,entity);
+            spawnParticles(entity);
         }
     }
 
     private boolean extinguishEntities(World world, ItemStack stack, EntityLivingBase entity, int range) {
         BlockPos pos = entity.getPosition();
-        List<EntityLiving> burningEntities = world.getEntitiesWithinAABB(EntityLiving.class,new AxisAlignedBB(pos.add(-range,-range,-range),pos.add(range,range,range)), e -> e.isBurning());
+
+        List<EntityLivingBase> burningEntities = world.getEntitiesWithinAABB(EntityLivingBase.class,new AxisAlignedBB(pos.add(-range,-range,-range),pos.add(range,range,range)), e -> e.isBurning());
         boolean anythingExtinguished = false;
-        for(EntityLiving burningEntity : burningEntities) {
+        for(EntityLivingBase burningEntity : burningEntities) {
             if(useCharge(stack)) {
                 anythingExtinguished = true;
                 burningEntity.extinguish();
@@ -198,14 +218,14 @@ public class ItemFrostOrb extends ItemBase {
         return anythingExtinguished;
     }
 
-    private void spawnParticles(World world, EntityLivingBase entity) {
+    private void spawnParticles(EntityLivingBase entity) {
         double step = Math.PI / 12.0;
-        double scale = 4;
+        double scale = 3;
         for(double t = 0; t < 2 * Math.PI; t += step) {
             double vx = Math.cos(t) * scale;
-            double vy = 5.0;
+            double vy = 0.5;
             double vz = Math.sin(t) * scale;
-            ((WorldServer) world).spawnParticle(EnumParticleTypes.CRIT_MAGIC, entity.posX, entity.posY, entity.posZ,5, vx, vy, vz,0.0f);
+            ModLightningForge.NETWORK.sendToAllAround(new WorldParticleMessage(EnumParticleTypes.CRIT_MAGIC, entity.posX, entity.posY + 1, entity.posZ, vx, vy, vz), new NetworkRegistry.TargetPoint(entity.dimension,entity.posX,entity.posY,entity.posZ,50));
         }
     }
 

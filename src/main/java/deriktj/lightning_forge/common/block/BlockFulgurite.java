@@ -1,4 +1,5 @@
 package deriktj.lightning_forge.common.block;
+import deriktj.lightning_forge.common.block.base.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -16,7 +17,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nonnull;
 import java.util.Random;
 
-public class BlockFulgurite extends BlockBase{
+public class BlockFulgurite extends BlockBase {
 
     private Item drop;
 

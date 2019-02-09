@@ -1,6 +1,6 @@
 package deriktj.lightning_forge.common.block;
 
-import deriktj.lightning_forge.common.core.ModLightningForge;
+import deriktj.lightning_forge.common.block.base.BlockBaseLog;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;

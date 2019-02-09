@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=bottom": { "model": "lightning_forge:frozen_slab_bottom" },
+    "half=top": { "model": "lightning_forge:frozen_slab_top" }
+  }
+}

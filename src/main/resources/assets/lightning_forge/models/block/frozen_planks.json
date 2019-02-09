@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "lightning_forge:blocks/frozen_log"
+    "all": "lightning_forge:blocks/frozen_planks"
   }
 }

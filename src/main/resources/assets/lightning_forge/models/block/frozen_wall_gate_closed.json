@@ -1,0 +1,6 @@
+{
+  "parent": "block/wall_gate_closed",
+  "textures": {
+    "texture": "lightning_forge:blocks/frozen_planks"
+  }
+}

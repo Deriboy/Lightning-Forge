@@ -2,7 +2,7 @@
   "forge_marker": 1,
   "defaults": {
     "textures": {
-      "particle": "lightning_forge:blocks/log_frozen"
+      "particle": "lightning_forge:blocks/frozen_log"
     },
     "model": "lightning_forge:frozen_leaves",
     "uvlock": true

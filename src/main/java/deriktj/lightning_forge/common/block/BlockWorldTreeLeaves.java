@@ -1,9 +1,9 @@
 package deriktj.lightning_forge.common.block;
 
+import deriktj.lightning_forge.common.block.base.BlockBaseLeaves;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumParticleTypes;
@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
-public class BlockWorldTreeLeaves extends BlockBaseLeaves{
+public class BlockWorldTreeLeaves extends BlockBaseLeaves {
 
     public BlockWorldTreeLeaves(String name) {
         super(name, 0);
@@ -25,7 +25,7 @@ public class BlockWorldTreeLeaves extends BlockBaseLeaves{
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(ModBlocks.frozen_sapling);
+        return Item.getItemFromBlock(ModBlocks.frozen_sapling); //TODO: generalize
     }
 
     @Override
